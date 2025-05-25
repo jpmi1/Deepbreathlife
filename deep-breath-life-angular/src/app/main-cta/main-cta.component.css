@@ -1,0 +1,61 @@
+.cta-section {
+  text-align: center;
+  padding: 3em 0; /* Vertical padding, horizontal handled by content-section */
+}
+
+.cta-section p {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  color: var(--text-color); /* Ensure text color is applied if not inherited clearly */
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--light-text-color); /* Assuming --light-text-color is suitable for buttons (e.g., white) */
+  padding: 0.8em 1.5em;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform for subtle interaction */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.cta-button:hover {
+  background-color: #4a9bc8; /* Darker shade of --primary-color (#5dade2 -> #4a9bc8) */
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.cta-button:active {
+  transform: translateY(0); /* Push button back down on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 2.5em 0;
+  }
+  .cta-section p {
+    font-size: 1.1em;
+  }
+  .cta-button {
+    font-size: 1em;
+    padding: 0.7em 1.3em;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 2em 0;
+  }
+  .cta-section p {
+    font-size: 1em;
+  }
+  .cta-button {
+    font-size: 0.95em;
+    padding: 0.6em 1.1em;
+  }
+}

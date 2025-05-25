@@ -1,0 +1,159 @@
+/* Global Styles for Deep Breath Life */
+
+/* Define Color Palette as CSS Variables */
+:root {
+  --primary-color: #5dade2; /* Calming blue */
+  --secondary-color: #e9ecef; /* Light gray */
+  --text-color: #212529; /* Dark gray / Off-black */
+  --link-color: var(--primary-color);
+  --background-color: #ffffff; /* White background */
+  --light-text-color: #f8f9fa; /* For dark backgrounds like footer */
+}
+
+/* Basic Reset and Font */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color); /* Or a slightly darker shade if preferred */
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+/* Links */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #2c8ac8; /* Darker shade of primary blue for hover */
+}
+
+/* Basic Content Container Styling */
+.page-container > app-hero,
+.page-container > app-journey-paths,
+.page-container > app-main-cta,
+.page-container > app-upcoming-events,
+.page-container > app-free-routine-form {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.content-section {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+/* Global Page Container (from previous step, ensure it's still relevant) */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Component-specific styles (temporary backgrounds removed/updated) */
+app-header {
+  /* Styles will be in header.component.css, but ensure it uses global vars if needed */
+  /* background-color: var(--secondary-color); /* Example if header needs a bg */
+  /* padding: 1em; remove if handled in component */
+  text-align: center; /* remove if handled in component */
+}
+
+app-hero {
+  /* background-color: #e0e0e0; */ /* Removed temp background */
+  text-align: center;
+}
+
+app-journey-paths {
+  /* background-color: #d0d0d0; */ /* Removed temp background */
+  background-color: var(--secondary-color); /* Example: Using a light grey for this section */
+  text-align: center;
+}
+
+app-main-cta {
+  /* background-color: #c0c0c0; */ /* Removed temp background */
+  text-align: center;
+}
+
+app-upcoming-events {
+  /* background-color: #b0b0b0; */ /* Removed temp background */
+  background-color: var(--secondary-color); /* Example: Using a light grey for this section */
+  text-align: center;
+}
+
+app-free-routine-form {
+  /* background-color: #a0a0a0; */ /* Removed temp background */
+  text-align: center;
+}
+
+app-footer {
+  background-color: #333; /* Kept dark grey for footer */
+  color: var(--light-text-color); /* Use light text on dark background */
+  padding: 2em 1em;
+  text-align: center;
+  margin-top: auto; /* Pushes footer to the bottom */
+}
+
+app-footer a {
+  color: var(--primary-color); /* Ensure links in footer are visible and use theme */
+}
+
+app-footer a:hover {
+  color: var(--light-text-color); /* Lighter hover for links on dark background */
+}
+
+
+/* Basic responsiveness for content sections */
+@media (max-width: 768px) {
+  .content-section {
+    padding: 15px;
+  }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+
+  .page-container > app-hero,
+  .page-container > app-journey-paths,
+  .page-container > app-main-cta,
+  .page-container > app-upcoming-events,
+  .page-container > app-free-routine-form {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-section {
+    padding: 10px;
+  }
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+
+  .page-container > app-hero,
+  .page-container > app-journey-paths,
+  .page-container > app-main-cta,
+  .page-container > app-upcoming-events,
+  .page-container > app-free-routine-form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

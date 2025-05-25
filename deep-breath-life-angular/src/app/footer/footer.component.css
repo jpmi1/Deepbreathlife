@@ -1,0 +1,48 @@
+/* Footer Styling */
+.site-footer {
+  background-color: var(--text-color);
+  color: var(--light-text-color);
+  padding: 2em 0; /* Vertical padding, horizontal handled by content-section */
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.footer-nav {
+  margin-bottom: 0.5em; /* Add some space below the nav links */
+}
+
+.footer-nav a {
+  color: var(--secondary-color); /* Using secondary as a light color on dark background */
+  text-decoration: none;
+  margin: 0 0.5em;
+  font-size: 0.9em;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-nav a:hover {
+  color: var(--primary-color); /* Primary color for hover, should be visible on dark bg */
+}
+
+.copyright {
+  font-size: 0.9em;
+  margin-bottom: 0; /* No margin bottom for the last element */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 1.5em 0;
+  }
+  .footer-logo {
+    font-size: 1.3em;
+  }
+  .footer-nav a,
+  .copyright {
+    font-size: 0.85em;
+  }
+}

@@ -1,0 +1,13 @@
+<section class="upcoming-events-section content-section">
+  <h2>Upcoming Events</h2>
+  <div class="events-list">
+    <div *ngFor="let event of events" class="event-card">
+      <h3>{{event.title}}</h3>
+      <p class="event-subtitle" *ngIf="event.subtitle">{{event.subtitle}}</p>
+      <p class="event-date-time">{{event.date}}, {{event.time}}</p>
+      <p class="event-platform">{{event.platform}}</p>
+      <p class="event-description">{{event.description}}</p>
+      <a [href]="event.bookingLink" class="btn btn-primary event-book-button">Book</a>
+    </div>
+  </div>
+</section>

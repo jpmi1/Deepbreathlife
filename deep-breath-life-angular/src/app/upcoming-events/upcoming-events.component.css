@@ -1,0 +1,143 @@
+/* Upcoming Events Section Styling */
+.upcoming-events-section {
+  padding: 3em 0; /* Increased padding */
+  background-color: var(--secondary-color);
+  text-align: center;
+}
+
+.upcoming-events-section h2 {
+  font-size: 2.2rem; /* Slightly larger for section title */
+  margin-bottom: 1.5em;
+  color: var(--text-color);
+}
+
+/* Event List Container */
+.events-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em; /* Space between cards */
+  padding: 0 1em; /* Add some padding on the sides for smaller screens */
+}
+
+/* Individual Event Card Styling */
+.event-card {
+  background-color: var(--background-color); /* White background for cards */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5em;
+  width: 320px; /* Fixed width for cards, adjust if using flex-basis */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Slightly more pronounced shadow */
+  text-align: left;
+  display: flex;
+  flex-direction: column; /* Align content vertically */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.event-card:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.event-card h3 {
+  font-size: 1.4rem;
+  color: var(--primary-color); /* Title in primary color */
+  margin-bottom: 0.5em;
+}
+
+.event-card .event-subtitle {
+  font-size: 0.9rem;
+  color: #777; /* Subdued color for subtitle */
+  margin-bottom: 0.75em;
+  font-style: italic;
+}
+
+.event-card .event-date-time,
+.event-card .event-platform {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.5em;
+}
+
+.event-card .event-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1em;
+  flex-grow: 1; /* Allow description to take available space */
+}
+
+/* Event Booking Button Styling */
+.event-book-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+  padding: 0.7em 1.3em; /* Slightly adjusted padding */
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  margin-top: auto; /* Push button to the bottom of the card */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.event-book-button:hover {
+  background-color: #4a9bc8; /* Darker shade of primary */
+  transform: translateY(-2px);
+}
+
+.event-book-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .upcoming-events-section {
+    padding: 2.5em 0;
+  }
+  .upcoming-events-section h2 {
+    font-size: 2rem;
+  }
+  .event-card {
+    width: calc(50% - 2em); /* Two cards per row, considering gap */
+    max-width: 320px; /* Ensure cards don't get too wide */
+  }
+  /* If only one card remains in a row, make it full width or centered */
+  .event-card:last-child:nth-child(odd) {
+     /* width: calc(100% - 2em); /* Full width if it's the only one in the last row */
+     /* margin-left: auto;
+     margin-right: auto; */
+  }
+}
+
+@media (max-width: 600px) { /* Adjusted breakpoint for single column */
+  .event-card {
+    width: calc(100% - 2em); /* Single card per row */
+    max-width: 400px; /* Max width for a single card layout */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .upcoming-events-section {
+    padding: 2em 0.5em; /* Reduce horizontal padding for section */
+  }
+  .upcoming-events-section h2 {
+    font-size: 1.8rem;
+  }
+  .events-list {
+    gap: 1.5em; /* Reduce gap for very small screens */
+    padding: 0 0.5em;
+  }
+  .event-card {
+    padding: 1.2em;
+    width: 100%; /* Ensure it takes full available width */
+  }
+  .event-card h3 {
+    font-size: 1.3rem;
+  }
+  .event-book-button {
+    padding: 0.6em 1.1em;
+    font-size: 0.95em;
+  }
+}
