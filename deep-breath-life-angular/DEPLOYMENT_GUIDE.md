@@ -164,3 +164,42 @@ Given that "Deep Breath Life" is a new project and likely benefits from ease of 
 *   **Environment Variables:** For API keys or other environment-specific configurations, Angular provides `environment.ts` files. Do not commit sensitive keys directly into your repository if it's public. For static hosting, these are typically built into the files. For server-side or container deployments, you can inject environment variables at runtime.
 
 By following this guide, you should be able to successfully deploy and host the "Deep Breath Life" Angular application. Choose the method that best aligns with your technical comfort, budget, and scalability needs.
+
+## Deploying to Railway
+
+Railway is a modern application hosting platform that can simplify the deployment of your Angular application, often using Nixpacks by default or a `Dockerfile`. With the recent additions to our project (`package.json` start script and `railway.json`), deploying to Railway should be straightforward.
+
+### Using Nixpacks with `railway.json` (Recommended)
+
+1.  **Connect Your GitHub Repository to Railway:**
+    *   Sign up or log in to [Railway](https://railway.app).
+    *   Create a new project and link it to the GitHub repository containing this Angular application.
+
+2.  **Configuration (Handled by `railway.json`):**
+    *   The `railway.json` file in the project root provides Railway with the necessary build and deployment commands:
+        *   **Build Command:** `npm run build --if-present` (Uses the production build script from `package.json`).
+        *   **Start Command:** `npm run start --if-present` (Uses the `serve` script from `package.json` to serve static files from `dist/deep-breath-life-angular/browser` on the port provided by Railway).
+    *   Railway will automatically detect and use this file.
+
+3.  **Deployment:**
+    *   Once your repository is linked, Railway should automatically trigger a build and deployment based on the `railway.json` settings.
+    *   Subsequent pushes to your connected branch (e.g., `main` or `feature/initial-angular-website`) will trigger new deployments.
+
+4.  **Environment Variables:**
+    *   Our current setup uses `serve -l $PORT`, which automatically picks up the `PORT` environment variable injected by Railway.
+    *   If you need other environment variables in the future (e.g., for API keys if Angular services were to call external APIs directly, though this is not typical for client-side Angular), you can set them in the Railway project settings.
+
+5.  **Custom Domain:**
+    *   After deployment, you can configure a custom domain for your service in the Railway project settings.
+
+### Alternative: Using a `Dockerfile`
+
+If you require more fine-grained control over the build environment or the server setup, you can use a `Dockerfile`. Railway supports Docker-based deployments.
+
+1.  **Create a `Dockerfile`:** (Refer to the Docker section earlier in this guide for a basic example, ensuring the Nginx configuration correctly serves your Angular SPA from `dist/deep-breath-life-angular/browser`).
+2.  **Railway Configuration:**
+    *   Remove or do not create a `railway.json` file if you want Railway to use your `Dockerfile` exclusively (it usually auto-detects it).
+    *   Alternatively, you can specify Dockerfile deployment in `railway.json` if needed, but it's often not necessary if a `Dockerfile` is present.
+3.  **Deployment:** Railway will build your Docker image and deploy it.
+
+For most Angular projects, the Nixpacks approach with `railway.json` is simpler to manage.
