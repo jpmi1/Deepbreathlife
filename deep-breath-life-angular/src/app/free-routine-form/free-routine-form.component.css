@@ -1,0 +1,125 @@
+/* Free Routine Form Section Styling */
+.free-routine-section {
+  padding: 3em 0;
+  text-align: center;
+  background-color: var(--background-color); /* Use global background color */
+}
+
+.free-routine-section h2 {
+  font-size: 2.2rem; /* Consistent with other section titles */
+  margin-bottom: 0.5em;
+  color: var(--text-color);
+}
+
+.free-routine-section .subheading {
+  margin-bottom: 1.5em;
+  font-size: 1.1em;
+  color: var(--text-color);
+  max-width: 600px; /* Constrain width for better readability */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Form Styling */
+.routine-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0 1em; /* Add some padding for smaller screens */
+}
+
+.form-group {
+  margin-bottom: 1em;
+}
+
+.routine-form label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.routine-form input[type="text"],
+.routine-form input[type="email"] {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Important for width calculation */
+  font-size: 1em;
+}
+
+.routine-form input[type="text"]:focus,
+.routine-form input[type="email"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(93, 173, 226, 0.25); /* Focus ring similar to Bootstrap */
+}
+
+/* Download Button Styling - inherits from .cta-button in global styles if applicable */
+.download-button {
+  display: block; /* Makes it take full width of its container if not already */
+  width: 100%; /* Explicitly set to full width */
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+  padding: 0.8em 1.5em; /* Consistent padding */
+  border: none; /* Remove default border if any */
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 1em; /* Add some space above the button */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.download-button:hover {
+  background-color: #4a9bc8; /* Darker shade of primary */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.download-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .free-routine-section {
+    padding: 2.5em 0;
+  }
+  .free-routine-section h2 {
+    font-size: 2rem;
+  }
+  .free-routine-section .subheading {
+    font-size: 1em;
+    max-width: 90%;
+  }
+  .routine-form {
+    padding: 0 1.5em; /* More padding for form on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .free-routine-section {
+    padding: 2em 0;
+  }
+  .free-routine-section h2 {
+    font-size: 1.8rem;
+  }
+  .routine-form {
+    padding: 0 1em; /* Adjust padding for form on mobile */
+  }
+  .routine-form input[type="text"],
+  .routine-form input[type="email"] {
+    padding: 0.7em;
+    font-size: 0.95em;
+  }
+  .download-button {
+    font-size: 1em;
+    padding: 0.7em 1.3em;
+  }
+}
